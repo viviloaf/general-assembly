@@ -37,7 +37,7 @@ Recommendations for next steps to the CollegBoard were written
 
 ## File Directory
 
-![Tree Diagram](/images/tree-diagram.png)
+![Tree Diagram](./images/tree-diagram.png)
 
 
 ## Data Dictionary
