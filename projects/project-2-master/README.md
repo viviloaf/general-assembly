@@ -61,14 +61,13 @@ The workflow is split into 5 distinct parts:
     * Model Comparison by RSME (Root Mean Squared Error) for Kaggle Competition
     
     
-4. Production Model Exploration
-    * 4.1 Exploration of production model 1: KNearest Regressors, RSME:
-    * 4.2 Exploration of production model 2: Lasso, RSME: 
-    * 4.3 Exploration of production model 3:
-    
-5. Predictions and Submissions
+4. Production Model Exploration, Predictions, Submissions
+    * 4.1 Exploration of production model 1: KNearest Regressors, RSME: 30718
+    * 4.2 Exploration of production model 2: Lasso, RSME: 33842
+    * 4.3 Exploration of production model 3: Kaggle, RSMLE: 0.33909
     * Predictions to Project 2 Competition: [link](https://www.kaggle.com/c/ga-dsir-824-project-2-regression-challenge/leaderboard#score)
     * Predictions to Ames Kaggle Competition: [link](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview)
+    
 
 
 ## Findings:
