@@ -1,6 +1,7 @@
 banner image
 
 # Predicting the Sale Price of Properities in Ames, Iowa
+---
 The [Ames Housing Dataset](http://www.amstat.org/publications/jse/v19n3/decock.pdf) is a data set of 2930 descrete observations and a large number of explantory values (23 nominal, 23 ordinal, 14 discrete, and 20 continuous) involved in assessing home values. [^fn1]
 
 At my time at General Assembly, this was the first major project involving any type of Machine Learning through the use of traditional methods such as Linear Regression, KNearestNeighbors and ElasticNet. 
@@ -8,6 +9,7 @@ At my time at General Assembly, this was the first major project involving any t
 There was huge emphasis on learning automation techniques such as pipelines and exhaustive hyperparameter searching. A batch of (50 * 50 * 19 * 20) has been suscessfully executed, taking 24hr to return accuracy scores and the fitted model. 
 
 ## Problem Statement:
+---
 
 ### Given attributes of a property can we predict a sale price?
 
@@ -18,6 +20,7 @@ Null Hypothesis: There is no relationship between the data and the sale price in
 Alternative Hypothesis: There is a quantiable relationship between the data and the sale price of homes in Ames, Iowa
 
 ## Summary:
+---
 
 This project is the first effort to work with numerical and categoerical data in conjunction. I developed an automated workflow where the project will:
 
@@ -33,7 +36,8 @@ This project is the first effort to work with numerical and categoerical data in
     * Create a submittable csv file for Kaggle Submission
 
 ## Data and Methodology:
-Information about the data can be found [here]() in the data description. Another can be found in the [data dictionary]().
+---
+Information about the data can be found [here]() in the data description and in the data dictionary below.
 
 The workflow is split into 5 distinct parts:
 
@@ -67,6 +71,7 @@ The workflow is split into 5 distinct parts:
 
 
 ## Findings:
+---
 
 We can reject the null hypothesis because there is a quantifiable relationship between the dataset and the predictors.
 
@@ -77,69 +82,89 @@ We can reject the null hypothesis because there is a quantifiable relationship b
 ## File Structure:
 
 ```bash
-project-2-master
-├── datasets
-│   ├── data_description.txt
-│   ├── other_kaggle
-│   │   ├── data_description.txt
-│   │   ├── sample_submission.csv
-│   │   ├── test.csv
-│   │   └── train.csv
-│   ├── sample_sub_reg.csv
-│   ├── test.csv
-│   └── train.csv
-├── images
-│   ├── 1200px-Iowa_State_University_seal.svg.png
-│   ├── cafe-diem-coffee.jpeg
-│   ├── kbestfeatures-numerical.png
-│   ├── kbestfeatures.png
-│   ├── Numerical Features vs SalePrice.png
-│   ├── pairplot.png
-│   ├── qual-top20.png
-│   ├── quan-top22.png
-│   ├── social-media-logo-horiz.jpg
-│   └── usda-aphis-logo.jpg
-├── main
-│   ├── 01_EDA.ipynb
-│   ├── 02_Feature_Engineering_KBestFeatures.ipynb
-│   ├── model-comparison.ipynb
-│   ├── models.py
-│   ├── Predictions_kaggle.ipynb
-│   ├── Production_Model_Exploration.ipynb
-│   ├── __pycache__
-│   │   └── models.cpython-38.pyc
-│   └── RMSE, 30718.93563.ipynb
-├── Nguyen, Vivian, GA, Project 2.pdf
-├── other
-│   ├── draftboard
-│   │   ├── Drafting.ipynb
-│   │   ├── failed-prediction.ipynb
-│   │   ├── Roughspace.ipynb
-│   │   └── Untitled1.ipynb
-│   ├── manipulated-datasets
-│   │   └── df_train_objects.csv
-│   ├── outputted work
-│   │   ├── baseline-924.csv
-│   │   ├── baseline.csv
-│   │   ├── lasso-rsme-22887.joblib
-│   │   ├── model-comparison.csv
-│   │   ├── overfit-lasso.joblib
-│   │   └── whole-dataset-model-comparison.csv
-│   └── predictions
-│       ├── 0918-1-nguyen.csv
-│       ├── 0918-2-nguyen.csv
-│       ├── 920-lasso-alpha-20-predictions.csv
-│       ├── 920-lasso-predictions-rsme-23328.csv
-│       └── 925-lasso-kaggle.csv
-├── project.md
-├── README.md
-└── suggestions.md
+
 
 ```
 
 ## Data Dictionary:
 Data Name | Detailed Description | Data Type | 
 ----------|----------------------|-----------| 
+MSSubClass| Identifies the type of dwelling involved in the sale | int |
+MSZoning| Identifies the general zoning classification of the sale | str |
+LotFrontage| Linear feet of street connected to property | int |
+LotArea| Lot size in square feet|int|
+Street| Type of road access to property|str|
+Alley| Type of alley access to property|str
+LotShape| General shape of property|str
+LandContour| Flatness of the property|str
+Utilities| Type of utilities available|str
+LotConfig| Lot configuration|str
+LandSlope| Slope of property|str
+LandSlope| Slope of property|str
+LandSlope| Slope of property|str
+Condition2| Proximity to various conditions (if more than one is present)|str
+BldgType| Type of dwelling|str
+HouseStyle| Style of dwelling|str
+OverallQual| Rates the overall material and finish of the house|int
+YearRemodAdd| Remodel date (same as construction date if no remodeling or additions|int
+RoofMatl| Roof material|str
+Exterior1st| Exterior covering on house|str
+Exterior2nd| Exterior covering on house (if more than one material)|str
+MasVnrType| Masonry veneer type|str
+MasVnrArea| Masonry veneer area in square feet|int
+ExterQual| Evaluates the quality of the material on the exterior |str
+ExterCond| Evaluates the present condition of the material on the exterior|str
+Foundation| Type of foundation|str
+BsmtQual| Evaluates the height of the basement|str
+BsmtCond| Evaluates the general condition of the basement|str
+BsmtExposure| Refers to walkout or garden level walls|str
+BsmtFinType1| Rating of basement finished area|str
+BsmtFinSF1| Type 1 finished square feet|int
+BsmtFinType2| Rating of basement finished area (if multiple types)|int
+BsmtFinSF2| Type 2 finished square feet|int
+BsmtUnfSF| Unfinished square feet of basement area|int
+TotalBsmtSF| Total square feet of basement area|int
+Heating| Type of heating|str
+HeatingQC| Heating quality and condition|str
+CentralAir| Central air conditioning|str
+Electrical| Electrical system|str
+1stFlrSF| First Floor square feet|int
+2ndFlrSF| Second floor square feet|int
+LowQualFinSF| Low quality finished square feet (all floors)|int
+GrLivArea| Above grade (ground) living area square feet|int
+BsmtFullBath| Basement full bathrooms|int
+BsmtHalfBath| Basement half bathrooms|int
+FullBath| Full bathrooms above grade|int
+HalfBath| Half baths above grade|int
+Bedroom| Bedrooms above grade (does NOT include basement bedrooms)|int
+Kitchen| Kitchens above grade|int
+KitchenQual| Kitchen quality|str
+TotRmsAbvGrd| Total rooms above grade (does not include bathrooms)|int
+Functional| Home functionality (Assume typical unless deductions are warranted)|str
+Fireplaces| Number of fireplaces|int
+FireplaceQu| Fireplace quality|str
+GarageType| Garage location|str
+GarageYrBlt| Year garage was built|int
+GarageFinish| Interior finish of the garage|str
+GarageCars| Size of garage in car capacity|int
+GarageArea| Size of garage in square feet|int
+GarageQual| Garage quality|str
+GarageCond| Garage condition|str
+PavedDrive| Paved driveway|str
+WoodDeckSF| Wood deck area in square feet|int
+OpenPorchSF| Open porch area in square feet|int
+3SsnPorch| Three season porch area in square feet|int
+ScreenPorch| Screen porch area in square feet|int
+PoolArea| Pool area in square feet|int
+PoolQC| Pool quality|str
+Fence| Fence quality|str
+MiscFeature| Miscellaneous feature not covered in other categories|str
+MiscVal| Value of miscellaneous feature|int
+MoSold| Month Sold (MM)|int
+YrSold| Year Sold (YYYY)|int
+SaleType| Type of sale| str
+SaleType| Type of sale|str
+
 
 ## References:
 [^fn1]: Cock, Dean De, "Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project", Journal of Statistics Education, Volume 19, Number 3(2011)
