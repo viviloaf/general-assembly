@@ -78,6 +78,68 @@ Reffering to the two produced images above, these numbers were calculated by tak
 ## File Structure:
 
 ```bash
+project-2-master
+├── datasets
+│   ├── data_description.txt
+│   ├── other_kaggle
+│   │   ├── data_description.txt
+│   │   ├── sample_submission.csv
+│   │   ├── test.csv
+│   │   └── train.csv
+│   ├── sample_sub_reg.csv
+│   ├── test.csv
+│   └── train.csv
+├── images
+│   ├── 1200px-Iowa_State_University_seal.svg.png
+│   ├── cafe-diem-coffee.jpeg
+│   ├── kbestfeatures-numerical.png
+│   ├── kbestfeatures.png
+│   ├── Numerical Features vs SalePrice.png
+│   ├── pairplot.png
+│   ├── qual-top20.png
+│   ├── quan-top22.png
+│   ├── social-media-logo-horiz.jpg
+│   └── usda-aphis-logo.jpg
+├── main
+│   ├── 01_EDA.ipynb
+│   ├── 02_Feature_Engineering_KBestFeatures.ipynb
+│   ├── 03_Model_Comparison.ipynb
+│   ├── 04_0_RMSE, 30718.93563.ipynb
+│   ├── 04_1_RSME, 22842 Lasso.ipynb
+│   ├── 04_2_RSME, 31091,Lasso with KBest.ipynb
+│   ├── 04_z_Predictions_kaggle.ipynb
+│   ├── models.py
+│   └── __pycache__
+│       └── models.cpython-38.pyc
+├── Nguyen, Vivian, GA, Project 2.pdf
+├── other
+│   ├── draftboard
+│   │   ├── Drafting.ipynb
+│   │   ├── failed-prediction.ipynb
+│   │   ├── Roughspace.ipynb
+│   │   └── Untitled1.ipynb
+│   ├── manipulated-datasets
+│   │   └── df_train_objects.csv
+│   ├── outputted work
+│   │   ├── baseline-924.csv
+│   │   ├── baseline.csv
+│   │   ├── lasso-rsme-22887.joblib
+│   │   ├── model-comparison.csv
+│   │   ├── overfit-lasso.joblib
+│   │   └── whole-dataset-model-comparison.csv
+│   └── predictions
+│       ├── 0918-1-nguyen.csv
+│       ├── 0918-2-nguyen.csv
+│       ├── 920-lasso-alpha-20-predictions.csv
+│       ├── 920-lasso-predictions-rsme-23328.csv
+│       ├── 925-lasso-alpha-20-predictions.csv
+│       ├── 925-lasso-kaggle.csv
+│       └── 925-lasso-kbest.csv
+├── project.md
+├── README.md
+└── suggestions.md
+
+10 directories, 49 files
 
 
 ```
