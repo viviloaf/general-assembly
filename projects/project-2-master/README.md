@@ -1,7 +1,4 @@
-banner image
-
 # Predicting the Sale Price of Properities in Ames, Iowa
----
 The [Ames Housing Dataset](http://www.amstat.org/publications/jse/v19n3/decock.pdf) is a data set of 2930 descrete observations and a large number of explantory values (23 nominal, 23 ordinal, 14 discrete, and 20 continuous) involved in assessing home values. [^fn1]
 
 At my time at General Assembly, this was the first major project involving any type of Machine Learning through the use of traditional methods such as Linear Regression, KNearestNeighbors and ElasticNet. 
@@ -9,7 +6,6 @@ At my time at General Assembly, this was the first major project involving any t
 There was huge emphasis on learning automation techniques such as pipelines and exhaustive hyperparameter searching. A batch of (50 * 50 * 19 * 20) has been suscessfully executed, taking 24hr to return accuracy scores and the fitted model. 
 
 ## Problem Statement:
----
 
 ### Given attributes of a property can we predict a sale price?
 
@@ -20,7 +16,6 @@ Null Hypothesis: There is no relationship between the data and the sale price in
 Alternative Hypothesis: There is a quantiable relationship between the data and the sale price of homes in Ames, Iowa
 
 ## Summary:
----
 
 This project is the first effort to work with numerical and categoerical data in conjunction. I developed an automated workflow where the project will:
 
@@ -36,8 +31,7 @@ This project is the first effort to work with numerical and categoerical data in
     * Create a submittable csv file for Kaggle Submission
 
 ## Data and Methodology:
----
-Information about the data can be found [here]() in the data description and in the data dictionary below.
+Information about the data can be found [here](./datasets/data_description.txt) in the data description and in the data dictionary below.
 
 The workflow is split into 5 distinct parts:
 
@@ -71,13 +65,15 @@ The workflow is split into 5 distinct parts:
 
 
 ## Findings:
----
 
 We can reject the null hypothesis because there is a quantifiable relationship between the dataset and the predictors.
 
-![qual]()
+![qual](./images/qual-top20.png)
 
-![quan]()
+![quan](./images/quan-top22.png)
+
+Reffering to the two produced images above, these numbers were calculated by taking the p-value and then condcuting a negative log to calculate the p-score. See [here](https://datascience.stackexchange.com/questions/10773/how-does-selectkbest-work)
+
 
 ## File Structure:
 
