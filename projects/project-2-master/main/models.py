@@ -81,7 +81,7 @@ class ModelSelection:
         
         self.preprocessing = preprocessing
         
-    def make_pipe(estimator_list, preprocessing=None):
+    def make_pipe(self,estimator_list, preprocessing=None):
         '''
         Output: List of Pipe Objects
         
@@ -99,7 +99,7 @@ class ModelSelection:
         
         return pipe_list
     
-    def make_pipe_wfs(self, feature_sel_list, estimator_list, preprocessing=None):
+    def make_pipe_wfs(self, estimator_list, preprocessing=None):
         '''
         Output: List of Pipe Objects
         
@@ -173,7 +173,7 @@ class ModelSelection:
         
         '''
         
-        pipe_array = self.make_pipe(self.preprocessing, estimator_list) 
+        pipe_array = self.make_pipe(estimator_list) 
         grid_array = []
         
         for pipe_object, param in list(zip(pipe_array, params)):
@@ -204,7 +204,7 @@ class ModelSelection:
                 n_jobs=-1))
         return grid_array
     
-    def make_grid_search_wfs(self, feature_list, estimator_list, params, preprocessing=None):
+    def make_grid_search_wfs(self, estimator_list, params, preprocessing=None):
         '''
         Output: List of Pipe Objects, List of GridSearchCV objects
         
@@ -218,7 +218,7 @@ class ModelSelection:
         if preprocessing == None:
             preprocessing = self.preprocessing
         
-        pipe_array = self.make_pipe_wfs(preprocessing, feature_list, estimator_list) 
+        pipe_array = self.make_pipe(preprocessing=preprocessing, estimator_list=estimator_list) 
         grid_array = []
         
         for pipe_object, param in list(zip(pipe_array, params)):
@@ -247,7 +247,7 @@ class ModelSelection:
         
         return scores, objects
     
-    def predictions(fitted_object, test_data, to_file=False):
+    def predictions(object_fitted, test_data, to_file=False):
         '''
         Output: Model Predictions
         
@@ -259,10 +259,10 @@ class ModelSelection:
         If to_file=True, it will output the Dataframe as a csv, ignoring the index and 
         place the csv file into your current working directory
         '''
-        predictions = fitted_object.predict(test_data)
+        predictions = object_fitted.predict(test_data)
         predictions = pd.DataFrame(predictions)
         predictions = predictions.rename({0:'SalePrice'}, axis=1)
-        predictions = predictions.join(df_test['Id'])
+        predictions = predictions.join(test_data['Id'])
         predictions = predictions[['Id', 'SalePrice']]
         
         if to_file == True:
