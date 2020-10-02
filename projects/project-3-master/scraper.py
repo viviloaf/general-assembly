@@ -72,8 +72,6 @@ class reddit_scraper:
             except:
                 df_filtered = df.T.loc[['title', 'created_utc', 'selftext', 'subreddit', 'author', 'permalink']]
                 #print(f'Stopped at {self.epoch_earliest}')
-            except:
-                
                 
             # append to empty dataframe list
             df_list.append(df_filtered)
@@ -108,7 +106,7 @@ class reddit_scraper:
             print('earliest',self.epoch_earliest,'starting',self.epoch_start)
             # scrape reddit based on inputted parameters when instantiating class
             time.sleep(10)
-            scraped = self.get_comments(subreddit='askengineers', n_iter=self.n_iter, epoch_right_now=self.epoch_start)
+            scraped = self.get_comments(subreddit=self.subreddit, n_iter=self.n_iter, epoch_right_now=self.epoch_start)
 
             #after messages have been scraped, store amount into a single csv, 
             scraped.to_csv(f'./data/reddit/{self.subreddit}/comments_epoch_{self.epoch_earliest}-{self.epoch_start}.csv', index=False)
