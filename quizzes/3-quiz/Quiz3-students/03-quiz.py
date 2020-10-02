@@ -99,7 +99,7 @@ lr.fit(X_train, y_train)
 train_score = lr.score(X_train, y_train)
 test_score = lr.score(X_test, y_test)
 time_done = dt.datetime.now()
-print(f'Estimator: Logistic Regression \nTrain Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
+print(f'  Estimator: Logistic Regression \nTrain Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
 
 # Train Trees
 # Fun fact, we don't need to scale here
