@@ -93,20 +93,48 @@ X_train, X_test, y_train, y_test = train_test_split(X,y, random_state=42)
 #print(y_test.head())
 
 # Train Logistic 
-time_start = dt.now()
+time_start = dt.datetime.now()
 lr = LogisticRegression(n_jobs=-1, max_iter=100_000)
 lr.fit(X_train, y_train)
 train_score = lr.score(X_train, y_train)
 test_score = lr.score(X_test, y_test)
-time_done = dt.now()
-print(f'Train Score: {train_score}, \n Test Score: {test_score} \n Time: {time_done-time_start}')
+time_done = dt.datetime.now()
+print(f'Train Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
+
+# Train Trees
+# Fun fact, we don't need to scale here
+list_estimators = [DecisionTreeClassifier(), RandomForestClassifier(), ExtraTreesClassifier()]
+
+for estimator in list_estimators:
+    time_start = dt.datetime.now()
+    estimator.fit(X_train, y_train)
+    train_score = estimator.score(X_train, y_train)
+    test_score = estimator.score(X_test, y_test)
+    time_done = dt.datetime.now()
+    print(f'Train Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
+    
 
 # Generate predictions on your test data
 predictions = lr.predict(X_test)
 
+# predict our list of estmators
+list_predictions = []
+for estimator in list_estimators:
+    list_predictions.append(estimator.predict(X_test))
+    
+#print(pd.DataFrame(list_predictions).head())
 # Create a new DataFrame for predictions
 #print(y_test.head())
-df_predictions = pd.DataFrame(predictions, columns=['predictions'], index=y_test.index)
+df_predictions = pd.DataFrame(predictions, columns=['predictions - logr'], index=y_test.index)
+df_list_predictions = list_predictions
+
+df_predictions = df_predictions.join(
+    pd.DataFrame(list_predictions,index = [
+        'predictions - tree', 
+        'predictions - rtree', 
+        'predictions - etree'], columns=y_test.index).T)
+
+print(df_predictions.head())
 
 #print(df_predictions.head())
 
@@ -118,4 +146,4 @@ df_predictions = pd.DataFrame(predictions, columns=['predictions'], index=y_test
 
 # Write the DataFrame you created to a csv called 'predictions.csv'
 # in the data folder in this repository
-#df_predictions.to_csv('predictions.csv')
+#df_predictions.to_csv('predictions-2.csv')
