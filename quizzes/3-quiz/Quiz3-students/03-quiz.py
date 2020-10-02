@@ -113,7 +113,7 @@ for estimator in list_estimators:
     train_score = estimator.score(X_train, y_train)
     test_score = estimator.score(X_test, y_test)
     time_done = dt.datetime.now()
-    print(f'Estimator: {names[name_counter]}\nTrain Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
+    print(f'  Estimator: {names[name_counter]}\nTrain Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
     name_counter += 1
     
 
