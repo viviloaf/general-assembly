@@ -99,19 +99,22 @@ lr.fit(X_train, y_train)
 train_score = lr.score(X_train, y_train)
 test_score = lr.score(X_test, y_test)
 time_done = dt.datetime.now()
-print(f'Train Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
+print(f'Estimator: Logistic Regression \nTrain Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
 
 # Train Trees
 # Fun fact, we don't need to scale here
 list_estimators = [DecisionTreeClassifier(), RandomForestClassifier(), ExtraTreesClassifier()]
+names = ['DecisionTreeClassifier', 'RandomForestClassifier', 'ExtraTreesClassifier']
 
+name_counter = 0
 for estimator in list_estimators:
     time_start = dt.datetime.now()
     estimator.fit(X_train, y_train)
     train_score = estimator.score(X_train, y_train)
     test_score = estimator.score(X_test, y_test)
     time_done = dt.datetime.now()
-    print(f'Train Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
+    print(f'Estimator: {names[name_counter]}\nTrain Score: {train_score}, \n Test Score: {test_score} \n Time Taken: {time_done-time_start}')
+    name_counter += 1
     
 
 # Generate predictions on your test data
@@ -146,4 +149,7 @@ print(df_predictions.head())
 
 # Write the DataFrame you created to a csv called 'predictions.csv'
 # in the data folder in this repository
-#df_predictions.to_csv('predictions-2.csv')
+
+bool_to_csv = input(f'Do you want a CSV of the Results shown above?\nOnly the first 5 rows are shown,\nThe Dataframe is of size {df_predictions.shape}\nEnter y/n: ')
+if bool_to_csv == 'y':
+    df_predictions.to_csv('predictions.csv')
