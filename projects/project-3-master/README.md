@@ -94,7 +94,7 @@ The workflow is split into 3 distinct parts:
 
 #### A Constant issue in Machine Learning:
 
-![image](/assets/oom.png)
+![image](assets/oom.png)
 
 #### Lemmatizing in this instance did not really help our model improve beyond its initial preformance
 
