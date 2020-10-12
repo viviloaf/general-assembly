@@ -109,8 +109,41 @@ The findings suggest that preprocessing will have a much bigger effect on how th
 ## File Structure:
 
 ```bash
+project-3-master
+├── 0_scraper.py
+├── 1_model_comparison.ipynb
+├── 2_plotting.ipynb
+├── assets
+│   ├── average_word_per_comment.png
+│   ├── df_all_results.png
+│   ├── lemma_no_lemma.png
+│   ├── model_comparison.png
+│   ├── oom.png
+│   ├── reddit-2.svg
+│   └── total_scraped_comments.png
+├── data-excerpts
+│   ├── askengineers
+│   │   ├── comments_epoch_1319221376-1330177255.csv
+│   │   ├── comments_epoch_1330177255-1337982601.csv
+│   │   └── comments_epoch_1337982601-1345928680.csv
+│   ├── legaladvice
+│   │   ├── comments_epoch_1588907111-1589038608.csv
+│   │   ├── comments_epoch_1589038608-1589164726.csv
+│   │   └── comments_epoch_1589164726-1589272236.csv
+│   └── nosleep
+│       ├── comments_epoch_1270678255-1291267532.csv
+│       ├── comments_epoch_1291267532-1297823322.csv
+│       └── comments_epoch_1297823322-1301623584.csv
+├── extras
+│   └── scraper_debugging.ipynb
+├── project.md
+├── __pycache__
+│   └── scraper.cpython-38.pyc
+├── README.md
+└── results
+    ├── 10_000_samples.csv
+    ├── scores_all.csv
+    └── scores_lemma.csv
 
-
+8 directories, 26 files
 ```
-
-## References:
