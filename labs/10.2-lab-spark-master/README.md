@@ -27,9 +27,9 @@ Using the `datasets/Heart.csv` dataset (credit: ISLR), you will build a binary c
 1. Split the data into an 80/20 train/test split. Use **42** for your random seed so we can have consistent scores across the board.
 2. Paste your best accuracy score from the test set below
 
-**REPLACE THIS WITH YOUR ACCURACY SCORE**
+**0.8478260869565217**
 
 ## Publish your notebook
 You're going to publish your notebook rather than submitting it in this repo. In DataBricks, select File > Publish and paste your URL below:
 
-**REPLACE THIS WITH YOUR NOTEBOOK URL**
+**https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8159436997593454/554703979663202/1411214922883254/latest.html**
